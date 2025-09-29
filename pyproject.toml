@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jafar"
+version = "0.1.0"
+description = "JAFAR package"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=2.1",
+  "hydra-core>=1.3",
+  "omegaconf>=2.3",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}              # <- src layout
+
+[tool.setuptools.packages.find]
+where = ["src"]                         # <- scan under src/
+include = ["jafar*"]                    # <- include jafar and subpackages
+
+# Include non-Python files inside the jafar package (shipped in wheels)
+[tool.setuptools.package-data]
+"jafar" = [
+  "configs/*.yaml",
+  "configs/**/*.yaml"
+]
+
+# If you prefer implicit package-data via MANIFEST.in:
+# [tool.setuptools]
+# include-package-data = true
