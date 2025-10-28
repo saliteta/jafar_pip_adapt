@@ -2,3 +2,4 @@ src/jafar.egg-info/
 src/jafar/__pycache__/
 __pycache__/
 **/__pycache__/
+build/

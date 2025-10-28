@@ -1,1 +1,1 @@
-recursive-include src/jafar/configs *.yaml
+recursive-include src/jafar/ *.yaml
